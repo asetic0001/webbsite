@@ -13,6 +13,10 @@ body {
     border-radius: 500px;
     animation: twinkle 1s alternate infinite;
 }
+.abt{
+    text-align: center;
+    display: flex;
+}
 
 @keyframes twinkle {
     0% {
@@ -44,13 +48,18 @@ body {
     background-color: #f5f5f5;
     margin: 4px 0;
     transition: 0.4s;
+    
 }
 
 .side-panel {
     position: fixed;
     width: 0;
     height: 100%;
-    background-color: #6675ce;
+    background: transparent;
+    box-shadow: 0 25px  0 rgba(48, 47, 47, 0.5);
+    backdrop-filter:blur(1px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
     overflow-x: hidden;
     transition: 0.5s;
     z-index: 1;
@@ -104,7 +113,7 @@ body {
 }
 
 .about {
-    text-align: justify;
+
     padding-left: 100%;
     padding-right: 100%;
     background-color: #fff;
@@ -119,6 +128,7 @@ ul{
     list-style-type: none;
 }
 ul li{
-background: #7683cc;
-  margin:2px;
+  margin:10px;
+  text-align: center;
+  padding-right: 30px;
 }
