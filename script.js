@@ -18,3 +18,11 @@ window.addEventListener("scroll", () => {
         about.classList.remove("hidden");
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.querySelector(".menu-btn");
+    const sidePanel = document.querySelector(".side-panel");
+
+    menuBtn.addEventListener("click", () => {
+        sidePanel.classList.toggle("active");
+    });
+});
