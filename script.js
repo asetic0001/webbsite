@@ -6,18 +6,8 @@ function createStar() {
     document.getElementById('stars-container').appendChild(star);
 }
 
-setInterval(createStar, 200); // Create twinkling stars every 200ms
+setInterval(createStar, 300); 
 
-// Show "title" and "about" after scrolling down
-window.addEventListener("scroll", () => {
-    const title = document.querySelector(".title");
-    const about = document.querySelector(".about");
-    
-    if (window.scrollY > 100) {
-        title.classList.remove("hidden");
-        about.classList.remove("hidden");
-    }
-});
 document.addEventListener("DOMContentLoaded", function () {
     const menuBtn = document.querySelector(".menu-btn");
     const sidePanel = document.querySelector(".side-panel");
