@@ -1,22 +1,18 @@
 body {
     margin: 0;
-    overflow-x: hidden;
+    height:100%;
     background-color: #000;
     font-family: 'Poppins', sans-serif;
 }
-
 .star {
     position: absolute;
-    width: 2px;
-    height: 2px;
+    width: 3px;
+    height: 3px;
     background-color: #fff;
     border-radius: 500px;
-    animation: twinkle 1s alternate infinite;
+    animation: twinkle 2s alternate infinite;
 }
-.abt{
-    text-align: center;
-    display: flex;
-}
+
 
 @keyframes twinkle {
     0% {
@@ -30,6 +26,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
 }
 
 .menu-btn {
@@ -45,6 +42,7 @@ body {
 .bar {
     width: 25px;
     height: 3px;
+    border-radius: 5px;
     background-color: #f5f5f5;
     margin: 4px 0;
     transition: 0.4s;
@@ -52,12 +50,12 @@ body {
 }
 
 .side-panel {
-    position: fixed;
+    position:sticky;
     width: 0;
     height: 100%;
     background: transparent;
     box-shadow: 0 25px  0 rgba(48, 47, 47, 0.5);
-    backdrop-filter:blur(1px);
+    backdrop-filter:blur(5px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     overflow-x: hidden;
@@ -90,34 +88,26 @@ body {
     }
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-.hero{
-    padding-bottom: 55%;
-}
+
 .title {
     text-align: center;
     color: #fff;
     font-size: 50px;
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+ 
 }
 
 .about {
 
-    padding-left: 100%;
-    padding-right: 100%;
+   
+    top:100%;
     background-color: #fff;
-    color: #000;
+    
+    
+
 }
 
 h1, h2, p {
