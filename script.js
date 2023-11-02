@@ -1,18 +1,9 @@
-function createStar() {
-    const star = document.createElement('div');
-    star.className = 'star';
-    star.style.left = `${Math.random() * 100}vw`;
-    star.style.top = `${Math.random() * 100}vh`;
-    document.getElementById('stars-container').appendChild(star);
-}
+const aboutText = document.querySelector('.abt');
+const about = document.querySelector('.about');
 
-setInterval(createStar, 300); 
-
-document.addEventListener("DOMContentLoaded", function () {
-    const menuBtn = document.querySelector(".menu-btn");
-    const sidePanel = document.querySelector(".side-panel");
-
-    menuBtn.addEventListener("click", () => {
-        sidePanel.classList.toggle("active");
-    });
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const movement = -scrollY * 0.5; // Adjust the factor as needed for the desired speed
+    aboutText.style.left = `${movement}px`;
+    about.style.backgroundPosition = `${-movement}px 50%`; // Parallax background effect
 });

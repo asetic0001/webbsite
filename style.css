@@ -1,124 +1,172 @@
-body {
+* {
+    padding: 0;
     margin: 0;
-    height:100%;
-    background-color: #000;
-    font-family: 'Poppins', sans-serif;
-}
-.star {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 500px;
-    animation: twinkle 2s alternate infinite;
+    box-sizing: border-box;
 }
 
+:root {
+    --clr-neon:hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+    --gradient: linear-gradient(45deg, #662D8C, #ED1E79,#2E3192 ,#D4145A,#FBB03B );
 
-@keyframes twinkle {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
 }
-
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.menu-btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    border-radius: 5px;
-    background-color: #f5f5f5;
-    margin: 4px 0;
-    transition: 0.4s;
+    height: 100vh;
+    width: 100%;
     
 }
 
-.side-panel {
-    position:sticky;
-    width: 0;
-    height: 100%;
-    background: transparent;
-    box-shadow: 0 25px  0 rgba(48, 47, 47, 0.5);
-    backdrop-filter:blur(5px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow-x: hidden;
-    transition: 0.5s;
-    z-index: 1;
-    padding-top: 60px;
-    color: #fff;
-}
-
-.side-panel.active {
-    width: 250px;
-}
-
-.side-panel h2 {
-    padding: 10px;
-}
-
-.side-panel p {
-    padding: 10px;
-}
-
-@keyframes easeIn {
+@keyframes color {
     0% {
-        opacity: 0;
-        transform: translateY(50px);
+        background-position: 0 50%;
+
     }
     100% {
-        opacity: 1;
-        transform: translateY(0);
+        background-position: 100% 50%;
     }
 }
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: var(--gradient);
+    background-size: 300% 300%;
+    animation: color 20s ease-in-out infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-
-.title {
-    text-align: center;
-    color: #fff;
-    font-size: 50px;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    top: 50%;
-    left: 50%;
- 
 }
-
-.about {
-
-   
-    top:100%;
-    background-color: #fff;
-    
+.title{
+    color: rgb(255, 255, 255);
+    font-size: 5rem;  
     
 
-}
 
-h1, h2, p {
-    margin: 0;
+}
+h1.title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:lighter;
+}
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background-color:antiquewhite;
+}
+.work{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
     text-align: center;
 }
-ul{
-    list-style-type: none;
+.contact{
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    background: black;
+    font-family: 'Open Sans', sans-serif;
+    color:var(--clr-neon)
 }
-ul li{
-  margin:10px;
-  text-align: center;
-  padding-right: 30px;
+
+
+
+
+.neon-button {
+    font-size: 4rem;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+    position: relative;
+    z-index: 1; /* Ensure the button stays on top */
+
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+}
+
+.neon-button::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+    z-index: -1; /* Move the pseudo-element behind the button */
+}
+
+.neon-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity: 0;
+    background-color: var(--clr-neon);
+    z-index: -2; /* Move the pseudo-element further behind the button */
+    transition: opacity 100ms linear;
+}
+
+.neon-button:hover,
+.neon-button:focus {
+    color: white;   
+    text-shadow: none;
+}
+
+.neon-button:hover::before,
+.neon-button:focus::before {
+    opacity: 1;
+    z-index: 0; /* Bring the pseudo-element to the front on hover */
+}
+
+.neon-button:hover::after,
+.neon-button:focus::after {
+    opacity: 1;
+    z-index: -1; /* Move the pseudo-element further behind on hover */
+}
+
+.app{
+    color: #FBB03B;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+.website{
+    color: #04b42a;
+    font-family:monospace;
+    font-weight: 100;
+}
+.abt {
+    position: relative;
+    font-family: sans-serif;
+    font-size: 10vw;
+    color: transparent;
+    -webkit-text-stroke: 0.2vw #662D8C;
+    position: absolute;
+    left: 100;
+    transition: transform 0.3s; /* Add a smooth transition effect */
+}
+.abt-p{
+    font-family:'Montserrat', sans-serif; 
+    color: #2E3192;
+    padding-top: 150px;
+
+}
+
+.abt:hover {
+    transform: scale(1.2); /* Shrink the text on hover */
+    color: #662D8C;
 }
