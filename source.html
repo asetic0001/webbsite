@@ -13,20 +13,36 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 </head>
-<body>
-    <nav>
+<body><header>
+    <div class="heads">
+      <h1 class="logo">Asetic</h1>
+  
+      <!-- Add the menu toggle button and hamburger icon -->
+      <div class="menu-toggle">
+        <div class="hamburger"></div>
+      </div>
+  
+      <nav class="site-nav">
         <ul>
-            <li><div class="mask"><a href="#">Education</a></div></li>
-            <li><div class="mask"><a href="#">Entertainment</a></div></li>
-            <li><div class="mask"><a href="#">Enrichment</a></div></li>
-            <li><div class="mask"><a href="#">Excitement</a></div></li>
+          <li><a href="#her01"><i class="fa fa-home site-nav--icon"></i>Home</a></li>
+          <li><a href="#about2"><i class="fa fa-info site-nav--icon"></i>About</a></li>
+          <li><a href="#work3"><i class="fa fa-pencil site-nav--icon"></i>work</a></li>
+          <li><a href="contact.html"><i class="fa fa-envelope site-nav--icon"></i>Contact</a></li>
         </ul>
-    </nav>
-
+      </nav>
+    </div>
+  </header>
+        
+        
+        
+        
+        
+        
     <div class="container">
-        <div class="hero">
+        <div class="hero" id="hero1">
             <a href="#" class="menu">
                 <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.9993 16.3333H25.666C26.2849 16.3333 26.8783 16.5792 27.3159 17.0168C27.7535 17.4543 27.9994 18.0478 27.9994 18.6667C27.9994 19.2855 27.7535 19.879 27.3159 20.3166C26.8783 20.7542 26.2849 21 25.666 21H13.9993C13.3805 21 12.787 20.7542 12.3494 20.3166C11.9118 19.879 11.666 19.2855 11.666 18.6667C11.666 18.0478 11.9118 17.4543 12.3494 17.0168C12.787 16.5792 13.3805 16.3333 13.9993 16.3333ZM30.3327 35H41.9994C42.6182 35 43.2117 35.2458 43.6493 35.6834C44.0869 36.121 44.3327 36.7145 44.3327 37.3333C44.3327 37.9522 44.0869 38.5457 43.6493 38.9833C43.2117 39.4208 42.6182 39.6667 41.9994 39.6667H30.3327C29.7138 39.6667 29.1204 39.4208 28.6828 38.9833C28.2452 38.5457 27.9994 37.9522 27.9994 37.3333C27.9994 36.7145 28.2452 36.121 28.6828 35.6834C29.1204 35.2458 29.7138 35 30.3327 35ZM13.9993 25.6667H41.9994C42.6182 25.6667 43.2117 25.9125 43.6493 26.3501C44.0869 26.7877 44.3327 27.3812 44.3327 28C44.3327 28.6188 44.0869 29.2123 43.6493 29.6499C43.2117 30.0875 42.6182 30.3333 41.9994 30.3333H13.9993C13.3805 30.3333 12.787 30.0875 12.3494 29.6499C11.9118 29.2123 11.666 28.6188 11.666 28C11.666 27.3812 11.9118 26.7877 12.3494 26.3501C12.787 25.9125 13.3805 25.6667 13.9993 25.6667Z" fill="black"/>
@@ -36,11 +52,11 @@
             
             <h1 class="title" > We make <strong class="app">Apps</strong> and <strong class="website">Websites</strong></h1>
         </div>
-        <div class="about">
+        <div class="about" id="about2">
             <h2 class="abt">About us</h2>
             <p class="abt-p">We are a group of like minded web and app developers,<br> who wants to bring change to the tech industry</p>
         </div>
-        <div class="work">
+        <div class="work" id="work3">
             <h2>Works</h2>
             <div class="bidya">
                 <div class="projects"></div>
@@ -56,7 +72,7 @@
             </div>
             
         </div>
-        <div class="contact">
+        <div class="contact" id="contact4">
             <a href="contact.html"  target="_blank"class= "neon-button">contact</a>
         </div>
 
