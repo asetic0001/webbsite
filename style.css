@@ -2,10 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+   
 }
 
 :root {
-    --clr-neon:hsl(317 100% 54%);
+    --clr-neon:hsl(133, 100%, 54%);
     --clr-bg: hsl(323 21% 16%);
     --gradient: linear-gradient(45deg, #662D8C, #ED1E79,#2E3192 ,#D4145A,#FBB03B );
 
@@ -13,8 +14,10 @@
 .container {
     height: 100vh;
     width: 100%;
+    position: relative;
     
 }
+
 
 @keyframes color {
     0% {
@@ -28,25 +31,32 @@
 .hero {
     height: 100vh;
     width: 100%;
-    background: var(--gradient);
-    background-size: 300% 300%;
-    animation: color 20s ease-in-out infinite alternate;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
-.title{
-    color: rgb(255, 255, 255);
-    font-size: 5rem;  
-    
-
-
-}
-h1.title{
+.title {
+    font-size: 5rem;
     font-family: 'Montserrat', sans-serif;
-    font-weight:lighter;
+    font-weight: lighter;
+    background: linear-gradient(45deg, #662D8C, #ED1E79, #2E3192, #D4145A, #FBB03B);
+    -webkit-background-clip: text; 
+    color: transparent;
+    background-size: 200% 200%; 
+    animation: color 12s ease-in-out infinite alternate;
 }
+
+@keyframes color {
+    0% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
 .about{
     display: flex;
     justify-content: center;
@@ -54,16 +64,74 @@ h1.title{
     position: relative;
     overflow: hidden;
     height: 100vh;
-    background-color:antiquewhite;
+    background-color:#3d2645;
 }
 .work{
+    justify-content: center;
+    height: 200vh;
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.work h2{
+    position: relative;
+    z-index: 1;
+    top:-200px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #ffffff;
-    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+.bidya {
+    position: relative;
+    top: 10;
+    align-items: bottom;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projects {
+
+    width: 250px;
+    border-radius: 5px;
+    margin-left: 50px; /* Add 'px' units for margin values */
+    height: 500px;
+    background-color: #2E3192;
+    border-width: 2px;
+    transition: transform 0.3s; /* Add a smooth transition effect on hover */
+}
+.projects:hover {
+    transform: scale(1.2); /* Pop out the current project on hover */
+    
+}
+
+
+
+.sheik
+ {
+    align-items: top;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 100;    
+}
+.project {
+    
+    width: 600px;
+    border-radius: 5px;
+    margin: 10PX; /* Add 'px' units for margin values */
+    height: 250px;
+    background-color: #2E3192;
+    border-width: 2px;
+    transition: transform 0.3s; /* Add a smooth transition effect on hover */
+    animation: moveUp 10s linear infinite;
+}
+.project:hover {
+    transform: scale(1.2); /* Pop out the current project on hover */
+    
+}
+
 .contact{
     display: grid;
     min-height: 100vh;
@@ -77,7 +145,7 @@ h1.title{
 
 
 .neon-button {
-    font-size: 4rem;
+    font-size: 2rem;
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
@@ -140,12 +208,17 @@ h1.title{
 }
 
 .app{
-    color: #FBB03B;
+
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
+    border-color: var(--gradient);
+    background-size: 300% 300%;
+    animation: color 20s ease-in-out infinite alternate;
 }
 .website{
-    color: #04b42a;
+    border-color: var(--gradient);
+    background-size: 300% 300%;
+    animation: color 20s ease-in-out infinite alternate;
     font-family:monospace;
     font-weight: 100;
 }
@@ -154,19 +227,24 @@ h1.title{
     font-family: sans-serif;
     font-size: 10vw;
     color: transparent;
-    -webkit-text-stroke: 0.2vw #662D8C;
+    background-size: 300% 300%;
+    background-image: var(--gradient); /* Apply the gradient background */
+    background-clip: text; /* Clip the background to the text */
+    -webkit-background-clip: text; /* For Webkit/Blink browsers */
     position: absolute;
     left: 100;
     transition: transform 0.3s; /* Add a smooth transition effect */
 }
+
+.abt:hover {
+    transform: scale(1.2); /* Shrink the text on hover */
+    animation:color 12s infinite alternate;
+}
+
 .abt-p{
     font-family:'Montserrat', sans-serif; 
-    color: #2E3192;
+    color: #b4b4b8;
     padding-top: 150px;
 
 }
 
-.abt:hover {
-    transform: scale(1.2); /* Shrink the text on hover */
-    color: #662D8C;
-}
