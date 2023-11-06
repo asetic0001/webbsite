@@ -20,6 +20,12 @@ function raf(time) {
 
 requestAnimationFrame(raf)
 
+import gsap from gsap;
+import ScrollTrigger from "gsap/ScrollTrigger";
+import Flip from "gsap/Flip";
+import Draggable from "gsap/Draggable";
+import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin); 
 
 const menuBtn = document.querySelector('.menu');
 const layout = document.querySelector('.layout');
